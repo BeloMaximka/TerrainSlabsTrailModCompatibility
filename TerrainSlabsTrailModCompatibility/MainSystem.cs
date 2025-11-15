@@ -1,29 +1,33 @@
-﻿using Vintagestory.API.Client;
+﻿using HarmonyLib;
+using System.Linq;
+using TerrainSlabs.Source.Compatibility;
+using TerrainSlabs.Source.HarmonyPatches;
 using Vintagestory.API.Common;
-using Vintagestory.API.Config;
-using Vintagestory.API.Server;
 
-namespace TerrainSlabsTrailModCompatibility
+namespace TerrainSlabsTrailModCompatibility;
+
+public class MainSystem : ModSystem
 {
-    public class MainSystem : ModSystem
+    private Harmony harmonyInstance = null!;
+
+    public override void StartPre(ICoreAPI api)
     {
-
-        // Called on server and client
-        // Useful for registering block/entity classes on both sides
-        public override void Start(ICoreAPI api)
+        harmonyInstance = new(Mod.Info.ModID);
+        if (!harmonyInstance.GetPatchedMethods().Any())
         {
-            Mod.Logger.Notification("Hello from template mod: " + api.Side);
+            harmonyInstance.PatchAll();
+            RenderersPatch.PatchAllRenderers(harmonyInstance);
+            WorldAccessorParticlesPatch.PatchAllParticleCode(harmonyInstance);
+            ParticlesManagerPatch.PatchAllParticleCode(harmonyInstance);
+
+            CatchLedgePatch.ApplyIfEnabled(api, harmonyInstance);
         }
 
-        public override void StartServerSide(ICoreServerAPI api)
-        {
-            Mod.Logger.Notification("Hello from template mod server side: " + Lang.Get("terrainslabstrailmodcompatibility:hello"));
-        }
+        api.RegisterBlockClass(nameof(BlockTrailSlab), typeof(BlockTrailSlab));
+    }
 
-        public override void StartClientSide(ICoreClientAPI api)
-        {
-            Mod.Logger.Notification("Hello from template mod client side: " + Lang.Get("terrainslabstrailmodcompatibility:hello"));
-        }
-
+    public override void Dispose()
+    {
+        harmonyInstance.UnpatchAll(harmonyInstance.Id);
     }
 }

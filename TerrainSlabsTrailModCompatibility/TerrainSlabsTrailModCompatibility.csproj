@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>bin\$(Configuration)\Mods\mod</OutputPath>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -59,6 +60,11 @@
   <Content Include="modicon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
+</ItemGroup>
+
+<ItemGroup>
+  <ProjectReference Include="..\TerrainSlabs\TerrainSlabs\TerrainSlabs.csproj" Private="False" />
+  <ProjectReference Include="..\trailmodupdated\TrailModUpdated\TrailModUpdated.csproj" Private="False" />
 </ItemGroup>
 
 </Project>

@@ -1,13 +1,15 @@
 {
     "type": "code",
     "modid": "terrainslabstrailmodcompatibility",
-    "name": "TerrainSlabsTrailModCompatibility",
+    "name": "TerrainSlabs & TrailMod compatibility patch",
     "authors": [
-        "Unknown"
+        "BeloMaximka"
     ],
-    "description": "To be added",
+    "description": "Slabs and trails",
     "version": "1.0.0",
-    "dependencies": {
-        "game": ""
-    }
+  "dependencies": {
+    "game": "1.21.0",
+    "terrainslabs": "1.0.4",
+    "trailmodupdated": "1.3.2"
+  }
 }
