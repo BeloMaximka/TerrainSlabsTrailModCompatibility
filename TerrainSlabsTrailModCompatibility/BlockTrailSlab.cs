@@ -79,4 +79,10 @@ public class BlockTrailSlab : BlockTrail
     {
         return BlockTerrainSlab.OnFallOnto(this, fullBlock, world, pos, block, blockEntityAttributes);
     }
+
+    protected override AssetLocation GetDevolveBlockAsset(string code)
+    {
+        AssetLocation fullBlockDevolveCode = new(Code.Domain, "trailmodupdated-" + code);
+        return fullBlockDevolveCode;
+    }
 }
