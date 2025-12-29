@@ -63,6 +63,7 @@
 </ItemGroup>
 
 <ItemGroup>
+  <ProjectReference Include="..\TerrainSlabs\PlaceOnSlabs\PlaceOnSlabs\PlaceOnSlabs.csproj" Private="False" />
   <ProjectReference Include="..\TerrainSlabs\TerrainSlabs\TerrainSlabs.csproj" Private="False" />
   <ProjectReference Include="..\trailmodupdated\TrailModUpdated\TrailModUpdated.csproj" Private="False" />
 </ItemGroup>

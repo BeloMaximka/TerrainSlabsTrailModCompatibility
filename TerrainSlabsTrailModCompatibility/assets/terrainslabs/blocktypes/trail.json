@@ -12,7 +12,7 @@
       "states": ["new", "established", "veryestablished", "old"]
     }
   ],
-  "behaviors": [],
+  "behaviors": [{ "name": "NameFromFullBlock" }],
   "creativeinventory": { "general": ["*"], "flora": ["*"], "terrain": ["*"] },
   "shape": { "base": "game:block/basic/slab/slab-down" },
   "drawtypeByType": { "*-none": "Cube", "*": "TopSoil" },
@@ -59,7 +59,6 @@
   },
   "sideSolid": {
     "all": false,
-    "up": true,
     "down": true
   },
   "emitSideAo": { "all": false },

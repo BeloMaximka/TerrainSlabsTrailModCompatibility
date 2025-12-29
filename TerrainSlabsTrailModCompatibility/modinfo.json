@@ -6,10 +6,10 @@
         "BeloMaximka"
     ],
     "description": "Slabs and trails",
-    "version": "1.0.1",
+    "version": "1.0.2",
   "dependencies": {
     "game": "1.21.0",
-    "terrainslabs": "1.0.6",
-    "trailmodupdated": "1.3.4"
+    "terrainslabs": "1.0.8",
+    "trailmodupdated": "1.3.5"
   }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36414.22
+# Visual Studio Version 18
+VisualStudioVersion = 18.1.11312.151 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerrainSlabsTrailModCompatibility", "TerrainSlabsTrailModCompatibility\TerrainSlabsTrailModCompatibility.csproj", "{3C474740-E9A7-4069-8CC6-A9B025D3CDAF}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerrainSlabs", "TerrainSlabs\TerrainSlabs\TerrainSlabs.csproj", "{3BC4006B-24CC-3CA8-6446-5E7F10BD7AF6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrailModUpdated", "trailmodupdated\TrailModUpdated\TrailModUpdated.csproj", "{F498B5E8-41CD-BB43-F49E-423F758363D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaceOnSlabs", "TerrainSlabs\PlaceOnSlabs\PlaceOnSlabs\PlaceOnSlabs.csproj", "{586D493D-01C9-299C-D573-FFC246C31BEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F498B5E8-41CD-BB43-F49E-423F758363D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F498B5E8-41CD-BB43-F49E-423F758363D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F498B5E8-41CD-BB43-F49E-423F758363D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{586D493D-01C9-299C-D573-FFC246C31BEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{586D493D-01C9-299C-D573-FFC246C31BEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{586D493D-01C9-299C-D573-FFC246C31BEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{586D493D-01C9-299C-D573-FFC246C31BEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
