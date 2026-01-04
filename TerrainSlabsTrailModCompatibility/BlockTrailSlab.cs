@@ -42,4 +42,30 @@ public class BlockTrailSlab : BlockTrail
         AssetLocation fullBlockDevolveCode = new(Code.Domain, "trailmodupdated-" + code);
         return fullBlockDevolveCode;
     }
+
+    // Get the third part, because the code format is like: terrainslabs:soil-trailmodupdated-fertility-new
+    protected override string GetFertilityVariantCode()
+    {
+        int firstHyphenIndex = Code.Path.IndexOf('-');
+        if (firstHyphenIndex < 0)
+        {
+            return Code.Path;
+        }
+
+        int secondHyphenIndex = Code.Path.IndexOf('-', firstHyphenIndex + 1);
+        if (secondHyphenIndex < 0)
+        {
+            return Code.Path;
+        }
+
+        int thirdHyphenIndex = Code.Path.IndexOf('-', secondHyphenIndex + 1);
+        if (thirdHyphenIndex >= 0)
+        {
+            // There's a fourth part, so extract the third part
+            return Code.Path.Substring(secondHyphenIndex + 1, thirdHyphenIndex - secondHyphenIndex - 1);
+        }
+
+        // No fourth part, so take everything after the second hyphen
+        return Code.Path[(secondHyphenIndex + 1)..];
+    }
 }
